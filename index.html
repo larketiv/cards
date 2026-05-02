@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DEAD MAN'S PARLOR</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rye&family=Special+Elite&family=Creepster&family=UnifrakturMaguntia&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div id="scanlines"></div>
+  <div id="vignette"></div>
+  <canvas id="bg-canvas"></canvas>
+
+  <!-- LOBBY -->
+  <div id="screen-lobby" class="screen active">
+    <div class="lobby-header">
+      <div class="skull-deco">☠</div>
+      <h1 class="title-main">DEAD MAN'S PARLOR</h1>
+      <p class="title-sub">— Your fate is sealed. Place your bets. —</p>
+      <div class="divider-ornament">✦ ✦ ✦</div>
+    </div>
+    <div class="game-grid" id="game-grid"></div>
+    <div class="lobby-footer">
+      <span>♠</span> All games of chance. House always wins. <span>♣</span>
+    </div>
+  </div>
+
+  <!-- GAME SCREENS (populated by JS) -->
+  <div id="screen-blackjack" class="screen"></div>
+  <div id="screen-texasholdem" class="screen"></div>
+  <div id="screen-war" class="screen"></div>
+  <div id="screen-solitaire" class="screen"></div>
+  <div id="screen-pig" class="screen"></div>
+  <div id="screen-craps" class="screen"></div>
+  <div id="screen-yahtzee" class="screen"></div>
+
+  <!-- TOAST NOTIFICATIONS -->
+  <div id="toast-container"></div>
+
+  <!-- MODAL OVERLAY -->
+  <div id="modal-overlay" class="modal-overlay hidden">
+    <div id="modal-box" class="modal-box">
+      <div id="modal-content"></div>
+      <button class="btn btn-danger" id="modal-close" onclick="closeModal()">CLOSE</button>
+    </div>
+  </div>
+
+  <script src="js/main.js"></script>
+  <script src="js/blackjack.js"></script>
+  <script src="js/texasholdem.js"></script>
+  <script src="js/war.js"></script>
+  <script src="js/solitaire.js"></script>
+  <script src="js/pig.js"></script>
+  <script src="js/craps.js"></script>
+  <script src="js/yahtzee.js"></script>
+</body>
+</html>
