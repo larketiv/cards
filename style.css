@@ -1,0 +1,100 @@
+/* ============================================================
+   DEAD MAN'S PARLOR — Main Stylesheet
+   Dark grimy underground gambling aesthetic
+   ============================================================ */
+
+:root {
+  --bg-deep:       #060404;
+  --bg-dark:       #0c0808;
+  --bg-surface:    #120e0e;
+  --bg-raised:     #1a1212;
+  --felt-dark:     #0a1f0a;
+  --felt-mid:      #0e2a0e;
+  --felt-light:    #133513;
+  --red-blood:     #7a0000;
+  --red-vivid:     #b81818;
+  --red-glow:      #e02020;
+  --red-dim:       #5a1010;
+  --gold-dark:     #6b4e0a;
+  --gold-mid:      #a07820;
+  --gold-bright:   #c9973a;
+  --gold-shine:    #e8c060;
+  --text-bright:   #e8ddd0;
+  --text-mid:      #a09080;
+  --text-dim:      #5a4a40;
+  --card-bg:       #f0ebe0;
+  --card-aged:     #e8dfc8;
+  --card-border:   #c8b898;
+  --card-red:      #b81818;
+  --card-black:    #1a1010;
+  --border-dark:   #2a1818;
+  --border-mid:    #4a2a1a;
+  --shadow-deep:   0 8px 32px rgba(0,0,0,0.9);
+  --shadow-glow:   0 0 20px rgba(184,24,24,0.4);
+  --shadow-gold:   0 0 15px rgba(201,151,58,0.3);
+}
+
+/* ---- Reset ---- */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-size: 16px; height: 100%; }
+body {
+  background-color: var(--bg-deep);
+  color: var(--text-bright);
+  font-family: 'Special Elite', 'Courier New', monospace;
+  min-height: 100vh;
+  overflow-x: hidden;
+  position: relative;
+  user-select: none;
+}
+button { cursor: pointer; }
+input { font-family: inherit; }
+
+/* ---- Background Canvas ---- */
+#bg-canvas {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  opacity: 0.15;
+  pointer-events: none;
+}
+
+/* ---- Scanlines overlay ---- */
+#scanlines {
+  position: fixed;
+  inset: 0;
+  z-index: 999;
+  pointer-events: none;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(0,0,0,0.12) 2px,
+    rgba(0,0,0,0.12) 4px
+  );
+}
+
+/* ---- Vignette ---- */
+#vignette {
+  position: fixed;
+  inset: 0;
+  z-index: 998;
+  pointer-events: none;
+  background: radial-gradient(
+    ellipse at center,
+    transparent 40%,
+    rgba(0,0,0,0.7) 100%
+  );
+}
+
+/* ---- Screens ---- */
+.screen {
+  display: none;
+  position: relative;
+  z-index: 1;
+  min-height: 100vh;
+}
+.screen.active { display: block; }
+
+/* ============================================================
